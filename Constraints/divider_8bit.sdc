@@ -1,7 +1,7 @@
 #set sdc_version 2.1
 reset_design
 
-set PERIOD  1.0
+set PERIOD  0.5
 set INPUT_DELAY  1.0
 set OUTPUT_DELAY  0.25
 set CLOCK_LATENCY 0.25
@@ -50,7 +50,7 @@ group_path  -name COMBO\
             -weight 1
 
 ## IN/OUT
-set INPUTPORTS [remove_from_collection [all_inputs] [get_ports wb_clk_i]]
+set INPUTPORTS [remove_from_collection [all_inputs] [get_ports clk]]
 set OUTPUTPORTS [all_outputs]
  
 set_input_delay -clock "clock" -max $INPUT_DELAY $INPUTPORTS
